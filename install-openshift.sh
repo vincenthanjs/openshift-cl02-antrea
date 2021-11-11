@@ -1,1 +1,1 @@
-openshift-install create install-config
+openshift-install create cluster
