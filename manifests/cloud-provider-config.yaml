@@ -10,7 +10,7 @@ data:
     server = "sun01-vcenter00.acepod.com"
     datacenter = "SUN01"
     default-datastore = "vsanDatastore"
-    folder = "/SUN01/vm/ocp-cl02-lwg48"
+    folder = "/SUN01/vm/ocp-cl02-xdqkk"
 
     [VirtualCenter "sun01-vcenter00.acepod.com"]
     datacenters = "SUN01"

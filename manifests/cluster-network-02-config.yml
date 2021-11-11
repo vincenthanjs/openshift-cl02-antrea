@@ -9,7 +9,7 @@ spec:
     hostPrefix: 23
   externalIP:
     policy: {}
-  networkType: antrea
+  networkType: OpenShiftSDN
   serviceNetwork:
   - 172.30.0.0/16
 status: {}

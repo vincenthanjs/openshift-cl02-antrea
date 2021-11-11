@@ -14,7 +14,7 @@ status:
   apiServerURL: https://api.ocp-cl02.acepod.com:6443
   controlPlaneTopology: HighlyAvailable
   etcdDiscoveryDomain: ""
-  infrastructureName: ocp-cl02-lwg48
+  infrastructureName: ocp-cl02-xdqkk
   infrastructureTopology: HighlyAvailable
   platform: VSphere
   platformStatus:
