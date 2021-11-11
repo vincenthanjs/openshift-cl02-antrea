@@ -1,0 +1,24 @@
+apiVersion: config.openshift.io/v1
+kind: Infrastructure
+metadata:
+  creationTimestamp: null
+  name: cluster
+spec:
+  cloudConfig:
+    key: config
+    name: cloud-provider-config
+  platformSpec:
+    type: VSphere
+status:
+  apiServerInternalURI: https://api-int.ocp-cl02.acepod.com:6443
+  apiServerURL: https://api.ocp-cl02.acepod.com:6443
+  controlPlaneTopology: HighlyAvailable
+  etcdDiscoveryDomain: ""
+  infrastructureName: ocp-cl02-lwg48
+  infrastructureTopology: HighlyAvailable
+  platform: VSphere
+  platformStatus:
+    type: VSphere
+    vsphere:
+      apiServerInternalIP: 10.114.1.191
+      ingressIP: 10.114.1.192

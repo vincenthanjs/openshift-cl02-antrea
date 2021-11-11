@@ -1,0 +1,22 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  creationTimestamp: null
+  labels:
+    machineconfiguration.openshift.io/role: worker
+  name: 99-worker-ssh
+spec:
+  config:
+    ignition:
+      version: 3.2.0
+    passwd:
+      users:
+      - name: core
+        sshAuthorizedKeys:
+        - |
+          ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdEWyxrTz91+YfNuUHoaFVFWJFUp2lZA3Dwh2MU49UNkZwM3QilwdCNCo8N257FvMkSEakEPpJhvFEH2YRvSzIQp08sSfemv/fdGgkUtRavdmnR76TNQVp6AsAaAKrIbAVyBMT+QDTmtyiktuA847yflm0tIEkjSGd6K0osKADkiMPk2fDozGAlOxZYYi8z4cD5/NCHWCYI+h94JW6EVZVPdzBtiuJ9l5fMC+nqU1dkaN6i59jkVDr+BWKhDwhJ6zJlUsRyLU+i6UFXnOcBsus65nJIrVoG3iVa8MYUpfOJ3BmmRjbyZSW31wfF3G1abGD46a9VrzrJWJ5HQr7HaiX root@localhost.localdomain
+  extensions: null
+  fips: false
+  kernelArguments: null
+  kernelType: ""
+  osImageURL: ""

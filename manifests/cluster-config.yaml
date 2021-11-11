@@ -1,0 +1,48 @@
+apiVersion: v1
+data:
+  install-config: |
+    apiVersion: v1
+    baseDomain: acepod.com
+    compute:
+    - architecture: amd64
+      hyperthreading: Enabled
+      name: worker
+      platform: {}
+      replicas: 3
+    controlPlane:
+      architecture: amd64
+      hyperthreading: Enabled
+      name: master
+      platform: {}
+      replicas: 3
+    metadata:
+      creationTimestamp: null
+      name: ocp-cl02
+    networking:
+      clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+      machineNetwork:
+      - cidr: 10.0.0.0/16
+      networkType: antrea
+      serviceNetwork:
+      - 172.30.0.0/16
+    platform:
+      vsphere:
+        apiVIP: 10.114.1.191
+        cluster: CL01-MGMT
+        datacenter: SUN01
+        defaultDatastore: vsanDatastore
+        ingressVIP: 10.114.1.192
+        network: VDS01-VLAN114-Workload-Net
+        password: ""
+        username: ""
+        vCenter: sun01-vcenter00.acepod.com
+    publish: External
+    pullSecret: ""
+    sshKey: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdEWyxrTz91+YfNuUHoaFVFWJFUp2lZA3Dwh2MU49UNkZwM3QilwdCNCo8N257FvMkSEakEPpJhvFEH2YRvSzIQp08sSfemv/fdGgkUtRavdmnR76TNQVp6AsAaAKrIbAVyBMT+QDTmtyiktuA847yflm0tIEkjSGd6K0osKADkiMPk2fDozGAlOxZYYi8z4cD5/NCHWCYI+h94JW6EVZVPdzBtiuJ9l5fMC+nqU1dkaN6i59jkVDr+BWKhDwhJ6zJlUsRyLU+i6UFXnOcBsus65nJIrVoG3iVa8MYUpfOJ3BmmRjbyZSW31wfF3G1abGD46a9VrzrJWJ5HQr7HaiX root@localhost.localdomain
+kind: ConfigMap
+metadata:
+  name: cluster-config-v1
+  namespace: kube-system

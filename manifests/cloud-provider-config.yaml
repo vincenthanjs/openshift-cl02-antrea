@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  config: |
+    [Global]
+    secret-name = "vsphere-creds"
+    secret-namespace = "kube-system"
+    insecure-flag = "1"
+
+    [Workspace]
+    server = "sun01-vcenter00.acepod.com"
+    datacenter = "SUN01"
+    default-datastore = "vsanDatastore"
+    folder = "/SUN01/vm/ocp-cl02-lwg48"
+
+    [VirtualCenter "sun01-vcenter00.acepod.com"]
+    datacenters = "SUN01"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: cloud-provider-config
+  namespace: openshift-config

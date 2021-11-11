@@ -1,0 +1,38 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: Machine
+metadata:
+  creationTimestamp: null
+  labels:
+    machine.openshift.io/cluster-api-cluster: ocp-cl02-lwg48
+    machine.openshift.io/cluster-api-machine-role: master
+    machine.openshift.io/cluster-api-machine-type: master
+  name: ocp-cl02-lwg48-master-2
+  namespace: openshift-machine-api
+spec:
+  metadata: {}
+  providerSpec:
+    value:
+      apiVersion: vsphereprovider.openshift.io/v1beta1
+      credentialsSecret:
+        name: vsphere-cloud-credentials
+      diskGiB: 120
+      kind: VSphereMachineProviderSpec
+      memoryMiB: 16384
+      metadata:
+        creationTimestamp: null
+      network:
+        devices:
+        - networkName: VDS01-VLAN114-Workload-Net
+      numCPUs: 4
+      numCoresPerSocket: 4
+      snapshot: ""
+      template: ocp-cl02-lwg48-rhcos
+      userDataSecret:
+        name: master-user-data
+      workspace:
+        datacenter: SUN01
+        datastore: vsanDatastore
+        folder: /SUN01/vm/ocp-cl02-lwg48
+        resourcePool: /SUN01/host/CL01-MGMT/Resources
+        server: sun01-vcenter00.acepod.com
+status: {}
